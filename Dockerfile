@@ -1,5 +1,5 @@
 # Build a static-ish release binary, then run it on a slim base.
-FROM rust:1.83-bookworm AS build
+FROM rust:1.97-bookworm AS build
 WORKDIR /app
 COPY Cargo.toml Cargo.lock ./
 COPY src ./src
