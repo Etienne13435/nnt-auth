@@ -1,0 +1,22 @@
+[package]
+name = "nnt-auth"
+version = "0.1.0"
+edition = "2021"
+description = "NNT.GG account auth + template sync service (see docs/auth-api.md)"
+
+[dependencies]
+axum = "0.7"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "signal"] }
+sqlx = { version = "0.8", default-features = false, features = [
+    "runtime-tokio",
+    "tls-rustls",
+    "postgres",
+] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+argon2 = "0.5"
+subtle = "2"
+uuid = { version = "1", features = ["v4"] }
+
+[profile.release]
+opt-level = 2
